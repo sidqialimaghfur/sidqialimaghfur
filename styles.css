@@ -1,0 +1,42 @@
+body {
+    background-color: #EEEEEE;
+}
+
+.hero-section {
+    background-image: url('C:\Users\hp\Downloads\WhatsApp Image 2024-07-16 at 00.23.17_3c9eeb95.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 100px 0;
+}
+
+.timeline {
+    border-left: 3px solid #373A40;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #686D76;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
