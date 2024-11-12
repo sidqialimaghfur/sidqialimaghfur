@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #1e90ff;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #1e90ff;
+            color: white;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #1a73e8;
+        }
+        .add-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #1e90ff;
+            font-weight: bold;
+        }
+        .add-link:hover {
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Buku</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Judul</th>
+                <th>Penulis</th>
+                <th>Tahun</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.judul }}</td>
+                <td>{{ book.penulis }}</td>
+                <td>{{ book.tahun }}</td>
+                <td>
+                    <a href="{{ url_for('edit', id=book.id) }}">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('tambah') }}" class="add-link">Tambah Buku Baru</a>
+</body>
+</html>
